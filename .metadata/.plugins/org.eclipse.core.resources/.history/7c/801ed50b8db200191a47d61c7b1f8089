@@ -1,0 +1,13 @@
+package cn.miw.dubbo.api;
+
+import cn.miw.dubbo.model.User;
+
+public interface IUserService {
+
+	/**
+	 * 查找用户
+	 * @param id
+	 * @return
+	 */
+	User findById(Integer id);
+}

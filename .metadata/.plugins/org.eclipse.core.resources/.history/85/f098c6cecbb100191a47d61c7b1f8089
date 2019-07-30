@@ -1,0 +1,14 @@
+package cn.miw.dubbo.server.impl;
+
+import cn.miw.dubbo.api.IUserService;
+import cn.miw.dubbo.model.User;
+
+public class UserServiceImpl implements IUserService {
+
+	@Override
+	public User findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

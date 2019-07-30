@@ -1,0 +1,20 @@
+package cn.miw.dubbo.server.impl;
+
+import com.alibaba.dubbo.config.annotation.Service;
+
+import cn.miw.dubbo.api.IUserService;
+import cn.miw.dubbo.model.User;
+
+@Service(version = "1.0")
+public class UserServiceImpl implements IUserService {
+
+	@Override
+	public User findById(Integer id) {
+		User user = new User();
+		user.setAge(10+id*2);
+		user.setName("张三"+id);
+		user.setId(id);
+		return user;
+	}
+
+}

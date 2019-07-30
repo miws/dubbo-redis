@@ -1,0 +1,5 @@
+package cn.miw.dubbo.model;
+
+public class User {
+
+}

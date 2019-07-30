@@ -1,0 +1,10 @@
+dubbo:
+  application:
+    id: user-consumer
+    name: user-consumer    
+    
+
+    
+spring:
+  application:
+    name: user-consumer    

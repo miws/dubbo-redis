@@ -1,0 +1,15 @@
+package cn.miw.dubbo.model;
+
+import java.io.Serializable;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+public class User implements Serializable{
+
+	private Integer id;
+	private String name;
+	private int age;
+	
+}

@@ -1,0 +1,15 @@
+
+spring:
+  redis:
+    host: 192.168.0.116
+    password: pass
+    database: 2
+    
+dubbo:
+  application:
+    id: user-consumer
+    name: user-consumer    
+  registry:
+    address: redis://192.168.0.116:6379
+    password: pass
+    

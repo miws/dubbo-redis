@@ -1,0 +1,32 @@
+package cn.miw.dubbo.consumer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
+
+import cn.miw.dubbo.api.IUserService;
+
+@SpringBootApplication
+@EnableDubbo
+@RestController
+public class ConsumerApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConsumerApp.class, args);
+	}
+
+	@Reference(version = "1.0")
+	IUserService userService;
+	private static Logger log = LoggerFactory.getLogger(ConsumerApp.class);
+	@GetMapping("/")
+	public Object index(Integer id) {
+		log.info("输入的ID：{},{}",id,(id==null)?0:id);
+		return userService.findById((id==null)?0:id);
+	}
+}

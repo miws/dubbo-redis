@@ -1,0 +1,21 @@
+server:
+  port: 8081
+  
+spring:
+  redis:
+    host: 192.168.0.116
+    password: pass
+    database: 2
+    
+dubbo:
+  application:
+    id: user-server
+    name: user-server    
+  registry:
+    address: redis://192.168.0.116:6379
+    server: true
+    password: pass
+    
+  protocol:
+    name: dubbo
+    port: 10002   

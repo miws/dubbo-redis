@@ -1,0 +1,6 @@
+package cn.miw.dubbo.api;
+
+public interface IUserService {
+
+	String findById(Integer id);
+}

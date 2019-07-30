@@ -1,0 +1,29 @@
+package cn.miw.dubbo.consumer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
+
+import cn.miw.dubbo.api.IUserService;
+
+@SpringBootApplication
+@EnableDubbo(scanBasePackages = {"cn.miw.dubbo.consumer"})
+@RestController
+public class ConsumerApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConsumerApp.class, args);
+	}
+
+	@Reference(version = "1.0")
+	IUserService userService;
+	
+	@GetMapping("/")
+	public Object index(Integer id) {
+		return userService.findById((id==null)?1:id);
+	}
+}

@@ -1,0 +1,5 @@
+package cn.miw.dubbo.api;
+
+public interface IUserService {
+
+}

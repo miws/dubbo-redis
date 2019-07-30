@@ -1,0 +1,27 @@
+package cn.miw.dubbo.consumer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.dubbo.config.annotation.Reference;
+
+import cn.miw.dubbo.api.IUserService;
+
+@EnableAutoConfiguration
+@RestController
+public class ConsumerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConsumerApplication.class, args);
+	}
+
+	@Reference(version = "1.0",url = "dubbo://127.0.0.1:35729")
+	IUserService userService;
+	
+	@GetMapping("/")
+	public Object index() {
+		return userService.findById(10);
+	}
+}

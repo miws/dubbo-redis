@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  
+dubbo:
+  application:
+    id: user-server
+    name: user-server    
+  registry:
+    address: N/A
+
+  protocol:
+    name: dubbo
+    port: 12345    
+    

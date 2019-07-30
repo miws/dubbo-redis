@@ -1,0 +1,6 @@
+
+spring:
+  redis:
+    host: 192.168.0.115
+    password: pass
+    database: 2

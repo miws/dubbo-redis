@@ -1,0 +1,17 @@
+server:
+  port: 8081
+  
+dubbo:
+  application:
+    id: user-server
+    name: user-server    
+  registry:
+    address: N/A
+  scan:
+    base-packages:
+    - cn.miw.dubbo.server.impl
+
+  protocol:
+    name: dubbo
+    port: 12345    
+    

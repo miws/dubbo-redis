@@ -1,0 +1,18 @@
+
+dubbo:
+  application:
+    id: user-server
+    name: user-server    
+    qosEnable: true
+    qosPort: 22223
+  registry:
+    address: redis://root:pass@192.168.0.116:6379/9
+
+  protocol:
+    name: dubbo
+    port: 12345    
+    host: dubbo.easex.cn 
+    
+spring:
+  application:
+    name: user-server    
